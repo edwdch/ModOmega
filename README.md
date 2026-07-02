@@ -1,34 +1,14 @@
-ModOmega, forked from SwitchyOmega compatible with manifest v3
+ModOmega
 ============
-
-[Chrome Web Store](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped)
-
-[Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/zeroomegaproxy-switchy-/dmaldhchmoafliphkijbfhaomcgglmgd)
-
-[Firefox Addon](https://addons.mozilla.org/en-US/firefox/addon/zeroomega/)
-
-Manage and switch between multiple proxies quickly & easily.
-
-[![Translation status](https://hosted.weblate.org/widgets/switchyomega/-/svg-badge.svg)](https://hosted.weblate.org/engage/switchyomega/?utm_source=widget)
 
 Chromium Extension
 ------------------
 The project is available as a Chromium Extension.
 
-You can try it on [Chrome Web Store](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped),
-or grab a packaged extension file (CRX) for offline installation on the [Releases page](https://github.com/edwdch/ModOmega/releases).
-
-Please [report issues on the issue tracker](https://github.com/edwdch/ModOmega/issues).
-
 Firefox Addon
 ----------------------------
 
 There is also a WebExtension port, which allows installing in Firefox. Compatibility with Firefox has increased significantly recently.
-
-You can try it on [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/zeroomega/),
-or grab a packaged extension file (XPI) for offline installation on the [Releases page](https://github.com/edwdch/ModOmega/releases).
-
-Please [report issues on the issue tracker](https://github.com/edwdch/ModOmega/issues), browser-specific bugs are possible.
 
 Development status
 ------------------
@@ -73,17 +53,6 @@ target, such as background pages and extension manifests.
 For now, only one target has been implemented: The WebExtension target.
 This target allows the project to be used as a Chromium extension in most
 Chromium-based browsers and also as a Firefox Addon as mentioned above.
-
-## Translation
-
-Translation is hosted on Weblate. If you want to help improve the translated
-text or start translation for your language, please follow the link of the picture
-below.
-
-本项目翻译由Weblate托管。如果您希望帮助改进翻译，或将本项目翻译成一种新的语言，请
-点击下方图片链接进入翻译。
-
-[![Translation status](https://hosted.weblate.org/widgets/switchyomega/-/287x66-white.png)](https://hosted.weblate.org/engage/switchyomega/?utm_source=widget)
 
 ## Building the project
 
