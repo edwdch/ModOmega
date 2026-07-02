@@ -348,6 +348,8 @@ class Options
         delete profile['syncError']
     unless Object::hasOwnProperty.call options, '-uiLanguage'
       changes['-uiLanguage'] = options['-uiLanguage'] = ''
+    else if options['-uiLanguage'] == 'zh_CN'
+      changes['-uiLanguage'] = options['-uiLanguage'] = 'zh'
     if version == 2
       # Current schemaVersion.
       Promise.resolve([options, changes])

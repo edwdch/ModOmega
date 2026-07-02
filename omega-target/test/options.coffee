@@ -17,6 +17,13 @@ describe 'Options', ->
         upgraded['-uiLanguage'].should.equal('')
         changes['-uiLanguage'].should.equal('')
 
+    it 'should migrate simplified Chinese UI language preference', ->
+      options = {schemaVersion: 2, '-uiLanguage': 'zh_CN'}
+      target = new Options()
+      target.upgrade(options).then ([upgraded, changes]) ->
+        upgraded['-uiLanguage'].should.equal('zh')
+        changes['-uiLanguage'].should.equal('zh')
+
   describe '.transformValueForSync', ->
     it 'should not sync local UI language preference', ->
       should.not.exist Options.transformValueForSync('zh_CN', '-uiLanguage')

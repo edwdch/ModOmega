@@ -2,6 +2,15 @@ module.exports = (grunt) ->
   taskDesc = 'Convert gettext PO files to Chromium Extension messages format.'
   # coffeelint: disable=missing_fat_arrows
   grunt.registerMultiTask 'po2crx', taskDesc, ->
+    localeDirs = {}
+    for f in this.files
+      match = f.dest.match(/^build\/_locales\/([^\/]+)\//)
+      localeDirs[match[1]] = true if match
+    if grunt.file.exists('build/_locales')
+      for locale in grunt.file.expand({cwd: 'build/_locales',
+      filter: 'isDirectory'}, '*')
+        unless localeDirs[locale]
+          grunt.file.delete("build/_locales/#{locale}")
     for f in this.files
       result = {}
       for src in f.src

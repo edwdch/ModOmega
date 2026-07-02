@@ -24,12 +24,7 @@ angular.module('omega').filter 'profiles', (builtinProfiles, profileOrder,
 angular.module('omega').factory 'omegaI18n', (omegaTarget) ->
   languages = [
     {code: 'en', name: 'English'}
-    {code: 'zh', name: '简中'}
-    {code: 'cs', name: 'Čeština'}
-    {code: 'fa', name: 'فارسی'}
-    {code: 'ru', name: 'Русский'}
-    {code: 'zh_CN', name: '简中 CN'}
-    {code: 'zh_TW', name: '繁中 TW'}
+    {code: 'zh', name: '中文'}
   ]
   languages: languages
   getMessage: omegaTarget.getMessage
