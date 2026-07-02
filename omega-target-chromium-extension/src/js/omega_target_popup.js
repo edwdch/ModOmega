@@ -26,6 +26,10 @@ var uiLanguage = '';
 var uiMessages = null;
 var uiMessageCache = {};
 
+function normalizeUiLanguage(language) {
+  return language === 'zh_CN' ? 'zh' : language;
+}
+
 function escapeRegExp(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -55,6 +59,7 @@ function substituteMessage(entry, substitutions) {
 
 function setUiLanguage(language, cb) {
   uiLanguage = typeof language === 'string' ? language : '';
+  uiLanguage = normalizeUiLanguage(uiLanguage);
   if (!uiLanguage) {
     uiMessages = null;
     return cb && cb(null);

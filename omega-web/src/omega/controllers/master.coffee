@@ -10,6 +10,10 @@ angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
 
   tr = $filter('tr')
   $scope.uiLanguages = omegaI18n.languages
+  normalizeUiLanguage = (options) ->
+    if options?['-uiLanguage'] == 'zh_CN'
+      options['-uiLanguage'] = 'zh'
+    options
 
   $rootScope.options = null
 
@@ -17,8 +21,8 @@ angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
     $scope.customCss = customCss
 
   omegaTarget.addOptionsChangeCallback (newOptions) ->
-    $rootScope.options = angular.copy(newOptions)
-    $rootScope.optionsOld = angular.copy(newOptions)
+    $rootScope.options = normalizeUiLanguage(angular.copy(newOptions))
+    $rootScope.optionsOld = angular.copy($rootScope.options)
 
     omegaTarget.state('syncOptions').then (syncOptions) ->
       $scope.syncOptions = syncOptions

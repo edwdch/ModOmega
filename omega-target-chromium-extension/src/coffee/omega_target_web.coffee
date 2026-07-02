@@ -22,6 +22,9 @@ angular.module('omegaTarget', []).factory 'omegaTarget', ($q) ->
   uiMessages = null
   uiMessageCache = {}
 
+  normalizeUiLanguage = (language) ->
+    if language == 'zh_CN' then 'zh' else language
+
   escapeRegExp = (text) ->
     text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
@@ -81,6 +84,7 @@ angular.module('omegaTarget', []).factory 'omegaTarget', ($q) ->
   loadUiLanguage = (language) ->
     return $q.when(uiMessages) unless language?
     language = '' unless typeof language == 'string'
+    language = normalizeUiLanguage(language)
     uiLanguage = language
     unless language
       uiMessages = null

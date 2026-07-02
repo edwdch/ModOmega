@@ -5,9 +5,8 @@ section.settings-group
   div.form-group
     label(for='ui-language') {{'options_uiLanguage' | tr}}
     = ' '
-    select#ui-language.form-control.ui-language-select(ng-model='options["-uiLanguage"]')
+    select#ui-language.form-control.ui-language-select(ng-model='options["-uiLanguage"]' ng-options='language.code as language.name for language in uiLanguages')
       option(value='') {{'options_uiLanguage_browser' | tr}}
-      option(ng-repeat='language in uiLanguages' value='{{language.code}}') {{language.name}}
   div.checkbox
     label
       input(type='checkbox' ng-model='options["-confirmDeletion"]')
