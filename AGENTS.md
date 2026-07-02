@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository is a multi-package ZeroOmega browser extension project. `omega-pac/` contains the standalone PAC generator and profile model logic. `omega-target/` contains browser-independent options and profile management. `omega-web/` contains the Angular-based options UI, Jade templates, Less styles, popup assets, themes, and icons. `omega-target-chromium-extension/` provides the WebExtension target, browser API integrations, overlay manifests, and packaging tasks. `omega-build/` is the root orchestration package for dependency setup, linked local development, builds, and releases. Localized strings live under `omega-locales/<locale>/LC_MESSAGES/`.
+This repository is a multi-package ModOmega browser extension project. `omega-pac/` contains the standalone PAC generator and profile model logic. `omega-target/` contains browser-independent options and profile management. `omega-web/` contains the Angular-based options UI, Jade templates, Less styles, popup assets, themes, and icons. `omega-target-chromium-extension/` provides the WebExtension target, browser API integrations, overlay manifests, and packaging tasks. `omega-build/` is the root orchestration package for dependency setup, linked local development, builds, and releases. Localized strings live under `omega-locales/<locale>/LC_MESSAGES/`.
 
 ## Build, Test, and Development Commands
 

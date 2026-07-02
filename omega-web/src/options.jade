@@ -2,7 +2,7 @@ doctype html
 html(lang='en' ng-controller='MasterCtrl' ng-csp)
   head
     meta(charset='utf-8')
-    title {{'options_title' | tr}} (Z&#8203er&#8203oOmega)
+    title {{'options_title' | tr}} (ModOmega)
     meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
     link(rel='stylesheet' href='lib/bootstrap/css/bootstrap.min.css')
     link(rel='stylesheet' href='lib/spectrum/spectrum.css')
@@ -16,7 +16,7 @@ html(lang='en' ng-controller='MasterCtrl' ng-csp)
     .container-fluid
       header.col-lg-2.col-sm-3.side-nav
         h1
-          a(ui-sref='about' title='{{"about_title" | tr}}') Zero Omega
+          a(ui-sref='about' title='{{"about_title" | tr}}') ModOmega
           sup.om-experimental.text-danger(ng-show='isExperimental')
             | {{'options_experimental_badge' | tr}}
         nav.nav.nav-pills.nav-stacked

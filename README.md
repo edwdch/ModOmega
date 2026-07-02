@@ -1,4 +1,4 @@
-ZeroOmega, forked from SwitchyOmega compatible with manifest v3
+ModOmega, forked from SwitchyOmega compatible with manifest v3
 ============
 
 [Chrome Web Store](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped)
@@ -16,9 +16,9 @@ Chromium Extension
 The project is available as a Chromium Extension.
 
 You can try it on [Chrome Web Store](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped),
-or grab a packaged extension file (CRX) for offline installation on the [Releases page](https://github.com/zero-peak/ZeroOmega/releases).
+or grab a packaged extension file (CRX) for offline installation on the [Releases page](https://github.com/edwdch/ModOmega/releases).
 
-Please [report issues on the issue tracker](https://github.com/zero-peak/ZeroOmega/issues).
+Please [report issues on the issue tracker](https://github.com/edwdch/ModOmega/issues).
 
 Firefox Addon
 ----------------------------
@@ -26,9 +26,9 @@ Firefox Addon
 There is also a WebExtension port, which allows installing in Firefox. Compatibility with Firefox has increased significantly recently.
 
 You can try it on [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/zeroomega/),
-or grab a packaged extension file (XPI) for offline installation on the [Releases page](https://github.com/zero-peak/ZeroOmega/releases).
+or grab a packaged extension file (XPI) for offline installation on the [Releases page](https://github.com/edwdch/ModOmega/releases).
 
-Please [report issues on the issue tracker](https://github.com/zero-peak/ZeroOmega/issues), browser-specific bugs are possible.
+Please [report issues on the issue tracker](https://github.com/edwdch/ModOmega/issues), browser-specific bugs are possible.
 
 Development status
 ------------------
@@ -87,7 +87,7 @@ below.
 
 ## Building the project
 
-ZeroOmega has migrated to use npm and grunt for building. Please note that
+ModOmega has migrated to use npm and grunt for building. Please note that
 node 20.x is required for this project.
 
 To build the project:
@@ -115,32 +115,32 @@ License
 -------
 ![GPLv3](https://www.gnu.org/graphics/gplv3-127x51.png)
 
-ZeroOmega is licensed under [GNU General Public License](https://www.gnu.org/licenses/gpl.html) Version 3 or later.
+ModOmega is licensed under [GNU General Public License](https://www.gnu.org/licenses/gpl.html) Version 3 or later.
 
-ZeroOmega is free software: you can redistribute it and/or modify
+ModOmega is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-ZeroOmega is distributed in the hope that it will be useful,
+ModOmega is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with ZeroOmega.  If not, see <http://www.gnu.org/licenses/>.
+along with ModOmega.  If not, see <http://www.gnu.org/licenses/>.
 
 Notice
 ------
 
 
-ZeroOmega currently does not have a dedicated project homepage. Please refer to this Github repository and wiki for official information.
+ModOmega currently does not have a dedicated project homepage. Please refer to this Github repository and wiki for official information.
 
-ZeroOmega is not cooperating with any proxy providers, VPN providers or ISPs at the moment. No advertisement is displayed in ZeroOmega project or software. Proxy providers are welcome to recommend ZeroOmega as part of the solution in tutorials, but it must be made clear that ZeroOmega is an independent project, is not affiliated with the provider and therefore cannot provide any support on network connections or proxy technology.
+ModOmega is not cooperating with any proxy providers, VPN providers or ISPs at the moment. No advertisement is displayed in ModOmega project or software. Proxy providers are welcome to recommend ModOmega as part of the solution in tutorials, but it must be made clear that ModOmega is an independent project, is not affiliated with the provider and therefore cannot provide any support on network connections or proxy technology.
 
 重要声明
 --------
 
-ZeroOmega 目前没有专门的项目主页。一切信息请以 Github 上的项目和 wiki 为准。
+ModOmega 目前没有专门的项目主页。一切信息请以 Github 上的项目和 wiki 为准。
 
-ZeroOmega 目前未与任何代理提供商、VPN提供商或 ISP 达成任何合作协议，项目或软件中不包含任何此类广告。欢迎代理提供商在教程或说明中推荐 ZeroOmega ，但请明确说明此软件是独立项目，与代理提供商无关，且不提供任何关于网络连接或代理技术的支持。
+ModOmega 目前未与任何代理提供商、VPN提供商或 ISP 达成任何合作协议，项目或软件中不包含任何此类广告。欢迎代理提供商在教程或说明中推荐 ModOmega ，但请明确说明此软件是独立项目，与代理提供商无关，且不提供任何关于网络连接或代理技术的支持。

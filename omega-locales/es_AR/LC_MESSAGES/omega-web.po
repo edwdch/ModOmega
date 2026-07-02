@@ -883,7 +883,7 @@ msgid "options_profileNameEmpty"
 msgstr "The name of the profile must not be empty."
 
 msgid "popup_title"
-msgstr "SwitchyOmega Popup"
+msgstr "ModOmega Popup"
 
 msgid "options_modalHeader_proxyAuth"
 msgstr "Proxy Authentication"
@@ -1214,16 +1214,16 @@ msgid "browserAction_profileDetails_RuleListProfile"
 msgstr "(switching based on rule list)"
 
 msgid "browserAction_titleNormal"
-msgstr "ZeroOmega:: $PROFILE$"
+msgstr "ModOmega:: $PROFILE$"
 
 msgid "browserAction_titleWithResult"
 msgstr ""
-"ZeroOmega:: $1:PROFILE$\n"
+"ModOmega:: $1:PROFILE$\n"
 "$3:DETAILS$"
 
 msgid "browserAction_titleNewerOptions"
 msgstr ""
-"ERROR: A newer version of SwitchOmega is required to load the stored options."
+"ERROR: A newer version of ModOmega is required to load the stored options."
 
 msgid "browserAction_titleOptionError"
 msgstr "ERROR: The stored options are corrupted. Click here to RESET OPTIONS."

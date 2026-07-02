@@ -1052,16 +1052,16 @@ msgid "browserAction_profileDetails_RuleListProfile"
 msgstr ""
 
 msgid "browserAction_titleNormal"
-msgstr "SwitchyOmega:: $PROFILE$"
+msgstr "ModOmega:: $PROFILE$"
 
 msgid "browserAction_titleWithResult"
 msgstr ""
-"SwitchyOmega:: $1:PROFILE$\n"
+"ModOmega:: $1:PROFILE$\n"
 "$3:DETAILS$"
 
 msgid "browserAction_titleNewerOptions"
 msgstr ""
-"FEIL: En nyere versjon av SwitchOmega kreves for å laste de lagrede valgene."
+"FEIL: En nyere versjon av ModOmega kreves for å laste de lagrede valgene."
 
 msgid "browserAction_titleOptionError"
 msgstr "FEIL: Lagrede valg skadet. Klikk her for å TILBAKESTILLE VALG."
