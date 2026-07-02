@@ -1,7 +1,7 @@
 angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
   $q, $modal, $state, profileColors, profileIcons, omegaTarget,
   $timeout, $location, $filter, getAttachedName, isProfileNameReserved,
-  isProfileNameHidden, dispNameFilter, downloadFile, themes
+  isProfileNameHidden, dispNameFilter, downloadFile, themes, omegaI18n
 ) ->
 
   if browser?.proxy?.register? or browser?.proxy?.registerProxyScript?
@@ -9,6 +9,7 @@ angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
     $scope.pacProfilesUnsupported = true
 
   tr = $filter('tr')
+  $scope.uiLanguages = omegaI18n.languages
 
   $rootScope.options = null
 
@@ -25,6 +26,12 @@ angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
     $timeout ->
       $rootScope.optionsDirty = false
       showFirstRun()
+
+  $rootScope.$watch (->
+    $rootScope.options?['-uiLanguage']
+  ), (language) ->
+    return unless language?
+    omegaI18n.setLanguage(language)
   
   $rootScope.revertOptions = ->
     if $rootScope.optionsDirty
@@ -402,4 +409,3 @@ angular.module('omega').controller 'MasterCtrl', ($scope, $rootScope, $window,
               $script 'js/options_guide.js'
 
   omegaTarget.refresh()
-

@@ -17,6 +17,37 @@ getActiveTab = (activeTabId, cb) ->
     queryTab(cb)
 
 angular.module('omegaTarget', []).factory 'omegaTarget', ($q) ->
+  defaultGetMessage = chrome.i18n.getMessage.bind(chrome.i18n)
+  uiLanguage = ''
+  uiMessages = null
+  uiMessageCache = {}
+
+  escapeRegExp = (text) ->
+    text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+  substituteMessage = (entry, substitutions) ->
+    return '' unless entry?.message?
+    message = entry.message
+    values = if Array.isArray(substitutions)
+      substitutions
+    else if substitutions?
+      [substitutions]
+    else
+      []
+    placeholders = entry.placeholders || {}
+    for own name, placeholder of placeholders
+      match = placeholder.content?.match(/^\$(\d+)$/)
+      continue unless match
+      index = parseInt(match[1], 10) - 1
+      continue unless index >= 0
+      value = if values[index]? then String(values[index]) else ''
+      pattern = new RegExp('\\$' + escapeRegExp(name) + '\\$', 'gi')
+      message = message.replace(pattern, value)
+    for value, index in values
+      pattern = new RegExp('\\$' + (index + 1), 'g')
+      message = message.replace(pattern, String(value ? ''))
+    message.replace(/\$\$/g, '$')
+
   decodeError = (obj) ->
     if obj._error == 'error'
       err = new Error(obj.message)
@@ -47,6 +78,35 @@ angular.module('omegaTarget', []).factory 'omegaTarget', ($q) ->
         d.resolve(response.result)
     )
     return d.promise
+  loadUiLanguage = (language) ->
+    return $q.when(uiMessages) unless language?
+    language = '' unless typeof language == 'string'
+    uiLanguage = language
+    unless language
+      uiMessages = null
+      return $q.when(null)
+    if uiMessageCache[language]?
+      uiMessages = uiMessageCache[language]
+      return $q.when(uiMessages)
+
+    d = $q.defer()
+    url = chrome.runtime.getURL("_locales/#{language}/messages.json")
+    fetch(url).then((response) ->
+      throw new Error("HTTP #{response.status}") unless response.ok
+      response.json()
+    ).then((messages) ->
+      uiMessageCache[language] = messages
+      uiMessages = messages if uiLanguage == language
+      d.resolve(messages)
+    ).catch((err) ->
+      console.warn?('Failed to load UI language messages.', language, err)
+      uiMessages = null if uiLanguage == language
+      d.resolve(null)
+    )
+    return d.promise
+  getMessage = (key, substitutions) ->
+    message = substituteMessage(uiMessages?[key], substitutions)
+    message || defaultGetMessage(key, substitutions)
   connectBackground = (name, message, callback) ->
     port = chrome.runtime.connect({name: name})
     onDisconnect = ->
@@ -97,9 +157,10 @@ angular.module('omegaTarget', []).factory 'omegaTarget', ($q) ->
     refresh: (args) ->
       return callBackground('getAll').then (opt) ->
         omegaTarget.options = opt
-        for callback in optionsChangeCallback
-          callback(omegaTarget.options)
-        return args
+        loadUiLanguage(opt?['-uiLanguage']).then ->
+          for callback in optionsChangeCallback
+            callback(omegaTarget.options)
+          return args
     renameProfile: (fromName, toName) ->
       callBackground('renameProfile', fromName, toName).then omegaTarget.refresh
     replaceRef: (fromName, toName) ->
@@ -114,7 +175,8 @@ angular.module('omegaTarget', []).factory 'omegaTarget', ($q) ->
           results[key] = decodeError(value)
         results
       ).then omegaTarget.refresh
-    getMessage: chrome.i18n.getMessage.bind(chrome.i18n)
+    getMessage: getMessage
+    setUiLanguage: loadUiLanguage
     openOptions: (hash) ->
       d = $q['defer']()
       options_url = chrome.runtime.getURL('options.html')
@@ -182,5 +244,9 @@ angular.module('omegaTarget', []).factory 'omegaTarget', ($q) ->
     checkOptionsSyncChange: -> callBackground('checkOptionsSyncChange')
     setRequestInfoCallback: (callback) ->
       requestInfoCallback = callback
+
+  callBackground('getAll').then((opt) ->
+    loadUiLanguage(opt?['-uiLanguage'])
+  ).catch(-> null)
 
   return omegaTarget

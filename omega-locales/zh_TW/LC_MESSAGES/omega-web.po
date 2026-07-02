@@ -237,6 +237,12 @@ msgstr "重設選項"
 msgid "options_group_miscOptions"
 msgstr "其他設定"
 
+msgid "options_uiLanguage"
+msgstr "介面語言"
+
+msgid "options_uiLanguage_browser"
+msgstr "跟隨瀏覽器"
+
 msgid "options_confirmDeletion"
 msgstr "刪除切換條件時需要確認。"
 

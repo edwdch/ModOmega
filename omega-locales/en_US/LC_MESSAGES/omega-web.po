@@ -260,6 +260,12 @@ msgstr "Reset options"
 msgid "options_group_miscOptions"
 msgstr "Misc Options"
 
+msgid "options_uiLanguage"
+msgstr "Interface language"
+
+msgid "options_uiLanguage_browser"
+msgstr "Follow browser"
+
 msgid "options_confirmDeletion"
 msgstr "Confirm on condition deletion."
 

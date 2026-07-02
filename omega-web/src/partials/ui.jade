@@ -2,6 +2,12 @@
   h2 {{'options_tab_ui' | tr}}
 section.settings-group
   h3 {{'options_group_miscOptions' | tr}}
+  div.form-group
+    label(for='ui-language') {{'options_uiLanguage' | tr}}
+    = ' '
+    select#ui-language.form-control.ui-language-select(ng-model='options["-uiLanguage"]')
+      option(value='') {{'options_uiLanguage_browser' | tr}}
+      option(ng-repeat='language in uiLanguages' value='{{language.code}}') {{language.name}}
   div.checkbox
     label
       input(type='checkbox' ng-model='options["-confirmDeletion"]')

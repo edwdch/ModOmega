@@ -10,6 +10,7 @@ module.exports = ->
   "-addConditionsToBottom": false
   "-showResultProfileOnActionBadgeText": false
   "-showExternalProfile": true
+  "-uiLanguage": ""
   "-downloadInterval": 1440
   "+proxy":
     bypassList: [

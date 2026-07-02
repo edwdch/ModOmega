@@ -263,6 +263,12 @@ msgstr "Сбросить настройки"
 msgid "options_group_miscOptions"
 msgstr "Прочие настройки"
 
+msgid "options_uiLanguage"
+msgstr "Язык интерфейса"
+
+msgid "options_uiLanguage_browser"
+msgstr "Как в браузере"
+
 msgid "options_confirmDeletion"
 msgstr "Требовать подтверждения при удалении условия"
 

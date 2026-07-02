@@ -1,7 +1,10 @@
 module = angular.module('omegaPopup', ['omegaTarget', 'omegaDecoration',
   'ui.bootstrap', 'ui.validate'])
 
-module.filter 'tr', (omegaTarget) -> omegaTarget.getMessage
+module.filter 'tr', (omegaTarget) ->
+  filter = (args...) -> omegaTarget.getMessage(args...)
+  filter.$stateful = true
+  filter
 module.filter 'dispName', (omegaTarget) ->
   (name) ->
     if typeof name == 'object'

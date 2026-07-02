@@ -255,6 +255,12 @@ msgstr "Obnovit nastavení"
 msgid "options_group_miscOptions"
 msgstr "Ostatní nastavení"
 
+msgid "options_uiLanguage"
+msgstr "Jazyk rozhraní"
+
+msgid "options_uiLanguage_browser"
+msgstr "Podle prohlížeče"
+
 msgid "options_confirmDeletion"
 msgstr "Potvrdit smazání podmínky."
 

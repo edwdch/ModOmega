@@ -87,7 +87,7 @@ class Options
   # @returns {{}} The transformed value
   ###
   @transformValueForSync: (value, key) ->
-    if key is '-customCss'
+    if key in ['-customCss', '-uiLanguage']
       return undefined
     if key[0] == '+'
       if OmegaPac.Profiles.updateUrl(value)
@@ -346,6 +346,8 @@ class Options
       if profile.syncOptions is 'disabled'
         delete profile['syncOptions']
         delete profile['syncError']
+    unless Object::hasOwnProperty.call options, '-uiLanguage'
+      changes['-uiLanguage'] = options['-uiLanguage'] = ''
     if version == 2
       # Current schemaVersion.
       Promise.resolve([options, changes])

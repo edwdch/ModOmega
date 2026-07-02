@@ -255,6 +255,12 @@ msgstr "بازنشانی گزینه‌ها"
 msgid "options_group_miscOptions"
 msgstr "گزینه‌های متفرّقه"
 
+msgid "options_uiLanguage"
+msgstr "زبان رابط کاربری"
+
+msgid "options_uiLanguage_browser"
+msgstr "پیروی از مرورگر"
+
 msgid "options_confirmDeletion"
 msgstr "تصدیق در زمان حذف شروط."
 

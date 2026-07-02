@@ -21,9 +21,26 @@ angular.module('omega').filter 'profiles', (builtinProfiles, profileOrder,
       result.sort profileOrder
     result
 
-angular.module('omega').filter 'tr', (omegaTarget) -> omegaTarget.getMessage
-angular.module('omega').filter 'dispName', (omegaTarget) ->
+angular.module('omega').factory 'omegaI18n', (omegaTarget) ->
+  languages = [
+    {code: 'en', name: 'English'}
+    {code: 'zh', name: '简中'}
+    {code: 'cs', name: 'Čeština'}
+    {code: 'fa', name: 'فارسی'}
+    {code: 'ru', name: 'Русский'}
+    {code: 'zh_CN', name: '简中 CN'}
+    {code: 'zh_TW', name: '繁中 TW'}
+  ]
+  languages: languages
+  getMessage: omegaTarget.getMessage
+  setLanguage: omegaTarget.setUiLanguage
+
+angular.module('omega').filter 'tr', (omegaI18n) ->
+  filter = (args...) -> omegaI18n.getMessage(args...)
+  filter.$stateful = true
+  filter
+angular.module('omega').filter 'dispName', (omegaI18n) ->
   (name) ->
     if typeof name == 'object'
       name = name.name
-    omegaTarget.getMessage('profile_' + name) || name
+    omegaI18n.getMessage('profile_' + name) || name
